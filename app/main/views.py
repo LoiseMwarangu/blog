@@ -7,7 +7,6 @@ from ..models import Blogpost
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import login_required
 from .. import db
-
 #Route for index...views
 @main.route('/')
 def index():

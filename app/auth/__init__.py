@@ -8,7 +8,7 @@ from flask_bootstrap import Bootstrap
 from config import config_options
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
-from flask_simplemde import 
+from flask_simplemde import  SimpleMDE
 from . import views,forms
 
 
@@ -51,6 +51,3 @@ def create_app(config_name):
 
 
     return app
-
-
-Add CommentCollapse 
