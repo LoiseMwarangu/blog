@@ -25,4 +25,15 @@ class Users(db.Model):
     username = db.Column(db.String(10))
     password = db.Column(db.String(20))
     password = db.Column(db.String(20))
-    
+
+class Review(db.Model):
+
+    __tablename__ = 'reviews'
+
+    id = db.Column(db.Integer,primary_key = True)
+    movie_id = db.Column(db.Integer)
+    movie_title = db.Column(db.String)
+    image_path = db.Column(db.String)
+    movie_review = db.Column(db.String)
+    posted = db.Column(db.DateTime,default=datetime.utcnow)
+    user_id = db.Column(db.Integer,db.ForeignKey("users.id"))   
