@@ -1,7 +1,9 @@
 import os
 class Config:
-    
+    class Config:
 
+    QUOTES_API_BASE_URL = '"http://quotes.stormconsultancy.co.uk/quotes/{}"'
+    QUOTES_API_KEY = os.environ.get('QUOTES_API_KEY') 
     SECRET_KEY = os.environ.get('SECRET KEY')
     MAIL_SERVER = 'smtp.googlemail.com'
     MAIL_PORT = 587
@@ -14,7 +16,7 @@ class Config:
      
 class ProdConfig(Config):
         SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
-        
+     
 
 class DevConfig(Config):
     DEBUG = True

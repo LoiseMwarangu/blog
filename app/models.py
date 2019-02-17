@@ -36,4 +36,7 @@ class Review(db.Model):
     image_path = db.Column(db.String)
     movie_review = db.Column(db.String)
     posted = db.Column(db.DateTime,default=datetime.utcnow)
-    user_id = db.Column(db.Integer,db.ForeignKey("users.id"))   
+    user_id = db.Column(db.Integer,db.ForeignKey("users.id")) 
+def get_reviews(cls,id):
+    reviews = Review.query.filter_by(users_id=id).all()
+    return reviews  
