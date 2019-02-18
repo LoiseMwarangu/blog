@@ -12,7 +12,6 @@
   <title>BLOGGED</title>
 
   <!-- Bootstrap core CSS -->
-
   <link href="{{ url_for('static', filename='bootstrap.min.css') }}" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -61,10 +60,11 @@
   <header class="masthead"style="background-image: url('{{ url_for('static', filename='home-bg.jpg') }}')">
     <div class="container">
       <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
           <div class="site-heading">
             <h1>Blogged</h1>
             <span class="subheading">Share your thoughts</span>
+            <p>{{quote}}  </p>
+            <span>{{quote_author}}</span>
           </div>
         </div>
       </div>
@@ -78,7 +78,6 @@
     <div class="row">
       <div class="post-preview">
       </div>
-      <div class="col-lg-8 col-md-10 mx-auto">
          {% for post in posts %}
         <div class="post-preview">
           <a href="{{ url_for('.post', post_id=post.id) }}">
@@ -99,7 +98,7 @@
         </div>
         {% endfor %}
         <hr>
-      </div>
+      
     </div>
   </div>
 
@@ -176,6 +175,9 @@
   <hr>
   <style>
       nav{
+        float: right;
+      }
+      span{
         float: right;
       }
       </style>

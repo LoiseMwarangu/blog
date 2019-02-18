@@ -3,6 +3,7 @@ from flask import Flask, render_template, request, redirect, url_for
 from datetime import datetime
 from . import main
 from ..models import Blogpost 
+from ..request import random_quote
 #Importing Flask-SQLAlchemy for database setup.
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import login_required
@@ -12,7 +13,10 @@ from .. import db
 def index():
     posts = Blogpost.query.order_by(Blogpost.date_posted.desc()).all()
 
-    return render_template('index.html', posts=posts)
+    myquote= random_quote()
+    quote = myquote["quote"]
+    quote_author = myquote ["author"]
+    return render_template('index.html', posts=posts, quote= quote, quote_author= quote_author)
 
 #Route for about
 @main.route('/about')
@@ -24,7 +28,8 @@ def about():
 def post(post_id):
     post = Blogpost.query.filter_by(id=post_id).one()
 
-    return render_template('post.html', post=post)
+
+    return render_template('post.html', post= post )
 
 #Route for add
 @main.route('/add')
