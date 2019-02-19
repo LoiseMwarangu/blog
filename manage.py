@@ -5,7 +5,7 @@ from app.models import Blogpost , Users
 from app import db
 
 
-app = create_app('production')
+app = create_app('development')
 
 
 manager = Manager(app)
