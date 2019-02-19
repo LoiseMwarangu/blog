@@ -1,1 +1,34 @@
-<footer>copyright 2019. Contact me at loisemwarangu@gmail.com</footer>
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf%}
+<!-- Content block -->
+{% block content %}
+<body>
+        <title> {{ title }} </title>
+    
+        <div class="container">
+                <br>
+                <br>
+                <br> 
+                <br>
+                <br>
+            <div class="well">
+                              
+                                <p class="btn-btn-success">
+                                        {{ wtf.quick_form(subscribe_form) }}
+                                    {{submit}}
+
+                                </p>
+                
+            </div>
+        </div> 
+</body>
+<style>
+      body{
+        background: url(/static/images/Black-And-White-Background-High-Definition-Wallpaper-16256.jpg);
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+</style>
+{% endblock %}<footer>copyright 2019. Contact me at loisemwarangu@gmail.com</footer>
