@@ -8,6 +8,7 @@ class Config:
     MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD")
     UPLOADED_PHOTOS_DEST= 'app/static/images'
     SQLALCHEMY_TRACK_MODIFICATIONS ='False'
+    SQLALCHEMY_DATABASE_URI='postgresql+psycopg2://loise:32123772@localhost/blogs'
 
 
     #Setting Database location
