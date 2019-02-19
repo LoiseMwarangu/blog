@@ -30,15 +30,16 @@
 
     <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-     <li><a class="navbar-brand" > <a href="/" class="btn btn-md buttons" style="color:#0D8499;">
-      <span class="glyphicon glyphicon-home"></span> Home
-    </a></a></li>                        
+     <li> <a href="/" class="btn btn-md buttons" style="color:#0D8499;">
+      <span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp; Home
+    </a></li>                        
      <ul class="nav navbar-nav navbar-right">
 
         <li><a href="{{ url_for('main.about') }}"style="color:#0D8499;" class="Add"><span class="glyphicon glyphicon-info-sign"></span>&nbsp;About</a></li>
       </li>
          <li><a href="{{url_for('main.add')}}" class="user"style="color:#0D8499;" font-weight:bolder;" class="logout"><span class="glyphicon glyphicon-plus"></span>&nbsp;Post new blog</a></li>
-
+         <li><a href="/subscribe" class="btn btn-md buttons" style="color:#0D8499;">Subscribe:  &nbsp;<span class="glyphicon glyphicon-envelope"></span></a></li>
+        </div>
      </ul>
      </ul>
 
@@ -73,7 +74,7 @@
               {{ post.subtitle }}
             </h3>
           </a>
-          <p class="post-meta">Posted by {{ post.author }} on {{ post.date_posted.strftime('%B %d, %Y') }}</p>
+          <p class="post-meta" style="color:white;">Posted by {{ post.author }} on {{ post.date_posted.strftime('%B %d, %Y') }}</p>
 
           <textarea name="comment[body]" id="new_comment_field" placeholder="Leave a comment" aria-label="Comment body" class="form-control input-contrast comment-form-textarea js-comment-field js-task-list-field js-quick-submit js-size-to-fit js-suggester-field js-quote-selection-target js-session-resumable js-saved-reply-shortcut-comment-field"></textarea>
           <button type="submit" class="btn btn-primary" data-disable-with="" data-disable-invalid="">
@@ -98,7 +99,7 @@
             <h2 class="post-title"style="color:#0D8499;" >
                &#8680 MICHAEL ONEAL
             </h2>
-            <h3 class="post-subtitle">
+            <h3 class="post-subtitle" style="color:white;">
                 As solopeneurs one of the keys to our success is our health. We've talked about this subject a few times because without health and vitality solopreneurship is an even more difficult path
             </h3>
           </a>
@@ -115,7 +116,7 @@
               <h2 class="post-title"style="color:#0D8499;">
                &#8680 JOE RICE JONES
               </h2>
-              <h3 class="post-subtitle">
+              <h3 class="post-subtitle" style="color:white;">
                   <p>When the Nintendo Switch first came out, modders and emulator-lovers all wondered how long it would take before an emulator of the console arrived. After all, the Nintendo Switch uses the Nvidia Tegra X1, the powerful mobile processor that also powers the Nvidia Shield Android TV console and Shield tablet.
                     </p>
             <p>With both of the Shield devices having thriving development communities over on XDA, it was only going to be a matter of time before someone figured out how to run the Nintendo Switch software on an Android device. While some consoles have resisted emulation, the Cell processor in the PS3 a notable standout, having the Nintendo Switch built on hardware that was already known to developers should give emulator makers a head start.
@@ -136,7 +137,7 @@
                 <h2 class="post-title"style="color:#0D8499;">
                  &#8680 JOE RICE JONES
                 </h2>
-                <h3 class="post-subtitle">
+                <h3 class="post-subtitle" style="color:white;">
                         Well, this is creepy. Ever needed a fake persona for social media? No? Me neither but if you did, this website would be what you’d use. ThisPersonDoesNotExist.com serves as a chilling reminder of the power of AI when it’s trained correctly.
 
                         Using research that Nvidia released last year, Phillip Wang, a software engineer at Uber, created the site, which creates a new fake portrait every time the page is refreshed. The AI powering it was trained on a huge dataset of images of real faces, then fed through a generative adversarial network (GAN), to generate new faces.
@@ -166,7 +167,7 @@
         float: right;
       }
       body{
-        background: url(/static/images/Black-And-White-Background-High-Definition-Wallpaper-16256.jpg);
+        background: url("https://i1.wp.com/gayomaxx.org/wp-content/uploads/2018/05/high-definition-rhpinterestcom-s-lion-wallpaper-hd-1080p-black-and-white-for-desktop-mobiles-tablets-in-high-definition-rhpinterestcom-group-rhmisucellcom-s-lion-wallpaper.jpg?fit=1899%2C1187");
         background-attachment: fixed;
         background-repeat: no-repeat;
         background-size: cover;
@@ -185,10 +186,14 @@
     
 
     } 
+    post-meta{
+      color: white;
+    }
     
     .post-preview:hover {
         box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
         transform: translateY(-7px);
+        color: white;
     }
     nav{
       color: #0D8499;
@@ -202,11 +207,10 @@
         font-weight: bolder;
     }
 .site-heading{
-  -webkit-filter: blur(8px);
-  -moz-filter: blur(8px);
-  -o-filter: blur(8px);
-  -ms-filter: blur(8px);
-  filter: blur(8px);
+  opacity: 0.9;
+        filter: alpha(opacity=50);
+        color:  white; 
+        font-weight: bolder;
 }
       </style>
 
