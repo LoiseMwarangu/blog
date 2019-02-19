@@ -2,7 +2,32 @@
 {% import 'bootstrap/wtf.html' as wtf%}
 <!-- Content block -->
 {% block content %}
+  <!-- Bootstrap core CSS -->
+  <link href="{{ url_for('static', filename='bootstrap.min.css') }}" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <!-- Custom fonts for this template -->
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
 <body>
+        <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+               <li> <a href="/" class="btn btn-md buttons" style="color:#0D8499;">
+                <span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp; Home
+              </a></li>                        
+               <ul class="nav navbar-nav navbar-right">
+          
+                  <li><a href="{{ url_for('main.about') }}"style="color:#0D8499;" class="Add"><span class="glyphicon glyphicon-info-sign"></span>&nbsp;About</a></li>
+                </li>
+                   <li><a href="{{url_for('main.add')}}" class="user"style="color:#0D8499;" font-weight:bolder;" class="logout"><span class="glyphicon glyphicon-plus"></span>&nbsp;Post new blog</a></li>
+                   <li><a href="/subscribe" class="btn btn-md buttons" style="color:#0D8499;">Subscribe:  &nbsp;<span class="glyphicon glyphicon-envelope"></span></a></li>
+                  </div>
+               </ul>
+               </ul>
+        <div></div>
         <title> {{ title }} </title>
     
         <div class="container">
